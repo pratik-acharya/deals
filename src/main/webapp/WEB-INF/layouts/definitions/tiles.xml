@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+ <tiles-definitions>
+
+ 	<definition name="homeLayout" template="/WEB-INF/layouts/resources/home/template/layout.jsp">
+ 	 	<put-attribute name="title" value=""></put-attribute>
+ 	 	<put-attribute name="navBar" value="/WEB-INF/layouts/resources/home/template/navBar.jsp"></put-attribute>
+ 	 	<put-attribute name="content" value=""></put-attribute>
+ 		<put-attribute name="footer" value="/WEB-INF/layouts/resources/home/template/footer.jsp"></put-attribute>
+	 	<put-list-attribute name="javascripts">
+	 		<add-attribute value="/resources/common/js/bootstrap.min.js" />
+	 		<add-attribute value="/resources/common/selectbox/jquery.selectbox-0.1.3.min.js" />
+	 		<add-attribute value="/resources/common/js/deals.custom.js" />
+	 		
+	    </put-list-attribute>
+		<put-list-attribute name="stylesheets">
+	 			<add-attribute value="/resources/common/css/bootstrap.min.css" />
+	 			<add-attribute value="/resources/common/font-awesome/css/font-awesome.min.css" />
+	 			<add-attribute value="/resources/common/selectbox/select_option.css" />
+	 			<add-attribute value="/resources/common/css/deals.css" />
+	 	</put-list-attribute>
+ 	
+ 	</definition>
+ 	
+ 	 <definition name="dashboardLayout" extends="homeLayout">
+ 	 	<put-attribute name="navBar" value="/WEB-INF/layouts/resources/dashboard/template/navBar.jsp"></put-attribute>
+ 	 	<put-list-attribute name="javascripts" inherit="true">
+	 		<add-attribute value="/resources/dashboard/js/deals.js" />
+	 	</put-list-attribute>
+ 	</definition>
+ 	
+ 	<definition name="adminLayout" extends="homeLayout">
+ 	 	<put-attribute name="navBar" value="/WEB-INF/layouts/resources/admin/template/navBar.jsp"></put-attribute>
+ 	 	<put-list-attribute name="javascripts" inherit="true">
+	 		<add-attribute value="/resources/admin/js/deals.js" />
+	 	</put-list-attribute>
+ 	</definition>
+ 	
+ 	<definition name="general-error" template="/WEB-INF/views/exception/general-error.jsp">
+ 		<put-list-attribute name="javascripts">
+	 		<add-attribute value="/resources/common/js/bootstrap.min.js" />
+	 		<add-attribute value="/resources/common/js/deals.custom.js" />
+	 		
+	    </put-list-attribute>
+		<put-list-attribute name="stylesheets">
+	 			<add-attribute value="/resources/common/css/bootstrap.min.css" />
+	 			<add-attribute value="/resources/common/font-awesome/css/font-awesome.min.css" />
+	 			<add-attribute value="/resources/common/css/deals.css" />
+	 	</put-list-attribute>
+ 	</definition>
+ 	
+ 		<definition name="page-not-found" template="/WEB-INF/views/exception/page-not-found.jsp">
+ 		<put-list-attribute name="javascripts">
+	 		<add-attribute value="/resources/common/js/bootstrap.min.js" />
+	 		<add-attribute value="/resources/common/js/deals.custom.js" />
+	 		
+	    </put-list-attribute>
+		<put-list-attribute name="stylesheets">
+	 			<add-attribute value="/resources/common/css/bootstrap.min.css" />
+	 			<add-attribute value="/resources/common/font-awesome/css/font-awesome.min.css" />
+	 			<add-attribute value="/resources/common/css/deals.css" />
+	 	</put-list-attribute>
+ 	</definition>
+ 	
+ 	
+ 	
+ 	
+ 	<definition name="login" extends="homeLayout">
+		<put-attribute name="title" value="Login - Deals"></put-attribute>
+		<put-attribute name="pageLabel" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/user/login.jsp"></put-attribute>
+		<put-list-attribute name="javascripts" inherit="true">
+	 		<add-attribute value="/resources/home/js/deals.js" />
+	 	</put-list-attribute>
+ 	</definition>
+ 	
+ 	<definition name="signup" extends="homeLayout">
+		<put-attribute name="title" value="signUp - Deals"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/user/signup.jsp"></put-attribute>
+		<put-list-attribute name="javascripts" inherit="true">
+	 		<add-attribute value="/resources/home/js/deals.js" />
+	    </put-list-attribute>
+ 	</definition>
+ 	
+ 	<definition name="deal" extends="dashboardLayout">
+		<put-attribute name="title" value="signUp - Deals"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/deals/deal.jsp"></put-attribute>
+ 	</definition>
+ 	
+ 	<definition name="form" extends="dashboardLayout">
+		<put-attribute name="title" value="Add - Deals"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/deals/form.jsp"></put-attribute>
+ 	</definition>
+ 	
+ 	
+ 	<definition name="dashboard" extends="dashboardLayout">
+		<put-attribute name="title" value="signUp - Deals"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/deals/dashboard.jsp"></put-attribute>
+		<put-list-attribute name="javascripts" inherit="true">
+	 		<add-attribute value="/resources/dashboard/js/deals.dashboard.js" />
+	 	</put-list-attribute>
+ 	</definition>
+ 	
+ 	<definition name="user.dashboard" extends="dashboardLayout">
+		<put-attribute name="title" value="Dashboard - User"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/user/dashboard.jsp"></put-attribute>
+		<put-list-attribute name="javascripts" inherit="true">
+	 		<add-attribute value="/resources/dashboard/js/user.dashboard.js" />
+	    </put-list-attribute>
+ 	</definition>
+ 	
+ 	<definition name="admin" extends="adminLayout">
+		<put-attribute name="title" value="Admin- Deals"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/user/admin/admin.jsp"></put-attribute>
+		<put-list-attribute name="javascripts" inherit="true">
+	 		<add-attribute value="/resources/admin/js/deals.js" />
+	 		<add-attribute value="/resources/admin/js/app.js" />
+	 		<add-attribute value="/resources/admin/js/dataTables.bootstrap.js" />
+	 		<add-attribute value="/resources/admin/js/demo.js" />
+	 		<add-attribute value="/resources/admin/js/jquery.dataTables.js" />
+	    </put-list-attribute>
+	    <put-list-attribute name="stylesheets" inherit="true">
+	    	<add-attribute value="/resources/admin/css/AdminLTE.css" />
+	 		<add-attribute value="/resources/admin/css/admin.css" />
+	 		<add-attribute value="/resources/admin/css/dataTables.bootstrap.css" />
+	    </put-list-attribute>
+ 	</definition>
+ 	<definition name="user.profile" template="/WEB-INF/views/user/profile.jsp"/>
+ 	<definition name="user.offers" template="/WEB-INF/views/user/offers.jsp"/>
+ 	
+		
+ 	
+ 
+ </tiles-definitions>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<!-- enable Method level [vs URL level] authorization This work for APPLICATION 
+		Level scanned components Does NOT recognize WEB level components - for THAT 
+		need to place enable line in Dispatcher-servlet -->
+	<!-- <security:global-method-security pre-post-annotations="enabled"/> -->
+	<!-- security:http enables security filter mechanism...name space configuration 
+		is activated -->
+	<!-- use-expressions enables URL level authorization -->
+	<security:http use-expressions="true" auto-config="true">
+		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+		<security:access-denied-handler error-page="/admin/generalerror" />
+		
+		<security:intercept-url pattern="/add/offer" access="isAuthenticated()" />
+		
+
+		<security:form-login login-page="/login"
+			default-target-url="/dashboard" authentication-failure-url="/login?error"
+			username-parameter="email" password-parameter="password" />
+		<security:logout logout-success-url="/login?logout"
+			delete-cookies="JSESSIONID" />
+		<security:csrf />
+
+
+
+	</security:http>
+
+
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider
+			user-service-ref="userDetailsService">
+			<security:password-encoder ref="encoder"></security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<bean id="userDetailsService" class="edu.mum.deals.user.serviceImpl.UserDetailsServiceImpl"></bean>
+
+
+	<bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<constructor-arg name="strength" value="10" />
+	</bean>
+
+
+
+
+</beans>

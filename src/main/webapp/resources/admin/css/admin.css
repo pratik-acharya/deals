@@ -1,0 +1,68 @@
+.logo{
+	font-family: Edwardian Script ITC;
+	font-size: 35px;
+}
+.no-margin{
+	margin: 0;
+}
+.foot-prop{
+	text-align: center;
+}
+
+.button-icon-size{
+	font-size: 16px;
+}
+.backgroung-white{
+	background-color: #ffffff;
+}
+.box-category{
+	border-top: none;
+	box-shadow:none;
+}
+.nav-font{
+	font-family: Eras ITC;
+	font-size: 16px;
+	
+}
+.carosel-size{
+	max-height: 632px;
+}
+.btn-add-member{
+	background-color: #47bac1;
+	color: white;
+	padding: 13px;
+}
+.btn-add-member:hover,.btn-add-member:focus{
+	color: white;
+	background-color: #39a6ac;
+}
+.btn{
+	padding:10px;
+}
+.nav-content-space{
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+.setting-form-width{
+	max-width: 360px;
+}
+.btn-action{
+	padding:13px;
+}
+.btn-danger:hover{
+	color:white !important;
+}
+.tabtop li a{font-family:'Lato', sans-serif;font-weight:700;color:#1b2834;border-radius:0px;margin-right:22.008px;border:1px solid #ebebeb !important;}
+.tabtop .active a:before{content:"";position:absolute;top:15px;left:82px;color:#47bac1;font-size:30px;}
+.tabtop li a:hover{color:#47bac1 !important;text-decoration:none;}
+.tabtop .active a:hover{color:#fff !important;}
+.tabtop .active a{background-color:#47bac1 !important;color:#FFF !important;}
+.margin-tops{margin-top:30px;}
+.tabtop li a:last-child{padding:10px 22px;}
+.thbada{padding:10px 28px !important;}
+section p{font-family:'Lato', sans-serif;}
+.tabsetting{border-top:5px solid #ebebeb;padding-top:6px;}
+.services{background-color:#d4d4d4;min-height:710px;padding:65px 0 27px 0;}
+.services a:hover{color:#000;}
+.services h1{margin-top:0px !important;}
+.heading-container p{font-family:'Lato', sans-serif;text-align:center;font-size:16px !important;text-transform:uppercase;}
